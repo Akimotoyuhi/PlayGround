@@ -24,7 +24,7 @@ public class ItemDataBase
 
 public enum ItemID
 {
-    Apple,
-    Gold,
-    GoldenApple,
+    RedGem,
+    RedGems,
+    GemWaterMelon,
 }
