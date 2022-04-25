@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// アイテム
+/// </summary>
 public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] Image _image;
@@ -12,7 +15,9 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoin
     private ItemID _id;
     private ItemState _state;
     private CraftSystem _craftSystem;
+    /// <summary>アイテムの状態</summary>
     public ItemState ItemState { get => _state; set => _state = value; }
+    /// <summary>アイテムID</summary>
     public ItemID ItemID => _id;
 
     public void Setup(ItemDataBase database, CraftSystem craftSystem)
@@ -24,6 +29,9 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoin
         _craftSystem = craftSystem;
     }
 
+    /// <summary>
+    /// クリックされた時
+    /// </summary>
     public void OnClick()
     {
         switch (_state)
@@ -39,6 +47,8 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoin
                 break;
         }
     }
+
+    //以下インターフェースの実装
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -60,8 +70,11 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoin
     }
 }
 
+/// <summary>
+/// アイテムの状態
+/// </summary>
 public enum ItemState
 {
-    Display,
-    Selected,
+    Display,//アイテム一覧
+    Selected,//選択済み
 }

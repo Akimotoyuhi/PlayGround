@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// アイテムのデータ
+/// </summary>
 [CreateAssetMenu(fileName = "Item Data")]
 public class ItemData : ScriptableObject
 {
@@ -22,6 +25,7 @@ public class ItemDataBase
     public ItemID Id => _id;
 }
 
+/// <summary>アイテムID</summary>
 public enum ItemID
 {
     RedGem,
